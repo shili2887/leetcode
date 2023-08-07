@@ -47,16 +47,22 @@ func findPath(root *TreeNode, max *int) int {
 	if *max < cur {
 		*max = cur
 	}
-	return cur
+
+	res := leftCount
+	if leftCount < rightCount {
+		res = rightCount
+	}
+	return res
 }
 
 func main() {
 	root := &TreeNode{1, nil, nil}
-	root.rigthAppend(5)
-	root.leftAppend(4)
-	root.Left.leftAppend(4)
-	root.Left.rigthAppend(4)
-	root.Right.rigthAppend(5)
+	root.rigthAppend(1)
+	root.Right.leftAppend(1)
+	root.Right.rigthAppend(1)
+	root.Right.Left.leftAppend(1)
+	root.Right.Left.rigthAppend(1)
+	root.Right.Right.leftAppend(1)
 
 	fmt.Println(longestUnivaluePath(root))
 }
