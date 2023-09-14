@@ -5,7 +5,6 @@ public class Q98_isValidBST {
         int val;
         TreeNode left;
         TreeNode right;
-
     }
 
     public boolean isValidBST(TreeNode root) {
